@@ -1,73 +1,73 @@
-# Carômetro Escolar / Student ID Manager
+# Carômetro Escolar / Gerenciador de Identificação de Alunos
 
-This is a Next.js application designed to manage student identification photos for a school environment. It allows for importing student data via CSV, searching for students, and capturing photos using a webcam. The photos are saved with a standardized naming convention (`Matricula_Nome.jpg`), making them suitable for facial recognition systems or ID card generation.
+Esta é uma aplicação Next.js projetada para gerenciar fotos de identificação de alunos em um ambiente escolar. Ela permite importar dados de alunos via CSV, pesquisar alunos e capturar fotos usando uma webcam. As fotos são salvas com uma convenção de nomenclatura padronizada (`Matricula_Nome.jpg`), tornando-as adequadas para sistemas de reconhecimento facial ou geração de cartões de identificação.
 
-## Features
+## Funcionalidades
 
-- **CSV Import**: Easily import student lists using a standard CSV file (`Matricula,Nome`).
-- **Real-time Search**: meaningful search and filtering by student name or ID.
-- **Webcam Integration**: Built-in camera interface to capture student photos directly in the browser.
-- **Standardized File Saving**: Photos are automatically saved to `public/photos` with the filename format `Matricula_Nome.jpg`.
-- **Visual Status Tracking**: Quickly see which students already have a photo (green border/checkmark) and which do not.
+- **Importação de CSV**: Importe facilmente listas de alunos usando um arquivo CSV padrão (`Matricula,Nome`).
+- **Busca em Tempo Real**: Pesquisa e filtragem eficiente por nome ou matrícula do aluno.
+- **Integração com Webcam**: Interface de câmera integrada para capturar fotos de alunos diretamente no navegador.
+- **Salvamento Padronizado de Arquivos**: Fotos são salvas automaticamente em `public/photos` com o formato de nome de arquivo `Matricula_Nome.jpg`.
+- **Rastreamento Visual de Status**: Veja rapidamente quais alunos já possuem foto (borda verde/marca de verificação) e quais não.
 
 ## Tech Stack
 
 - **Framework**: [Next.js](https://nextjs.org) (App Router)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com)
-- **Icons**: [Lucide React](https://lucide.dev)
-- **Camera**: [react-webcam](https://www.npmjs.com/package/react-webcam)
+- **Estilização**: [Tailwind CSS](https://tailwindcss.com)
+- **Ícones**: [Lucide React](https://lucide.dev)
+- **Câmera**: [react-webcam](https://www.npmjs.com/package/react-webcam)
 
-## Getting Started
+## Começando
 
-First, run the development server:
+Primeiro, execute o servidor de desenvolvimento:
 
 ```bash
 npm run dev
-# or
+# ou
 yarn dev
-# or
+# ou
 pnpm dev
-# or
+# ou
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000) no seu navegador para ver o resultado.
 
-## Usage Guide
+## Guia de Uso
 
-### 1. Prepare Student Data
-Create a CSV file (e.g., `students.csv`) with the following headers (or just the columns):
+### 1. Preparar Dados dos Alunos
+Crie um arquivo CSV (ex: `alunos.csv`) com os seguintes cabeçalhos (ou apenas as colunas):
 ```csv
 Matricula,Nome
-12345,John Doe
-67890,Jane Smith
+12345,Fulano de Tal
+67890,Beltrana da Silva
 ...
 ```
 
-### 2. Import Data
-- Click the "Import CSV" button in the top right corner.
-- Select your prepared CSV file.
-- The student list will populate automatically.
+### 2. Importar Dados
+- Clique no botão "Importar CSV" no canto superior direito.
+- Selecione seu arquivo CSV preparado.
+- A lista de alunos será preenchida automaticamente.
 
-### 3. Capture Photos
-- Use the search bar to find a specific student.
-- Click on a student card to open the camera interface.
-- Allow camera access if prompted.
-- Click "Capture Photo" to take a picture.
-- Review the photo and click "Save Photo".
-- The photo will be saved to the `public/photos` directory, and the student's card will update to show the new image.
+### 3. Capturar Fotos
+- Use a barra de pesquisa para encontrar um aluno específico.
+- Clique no cartão de um aluno para abrir a interface da câmera.
+- Permita o acesso à câmera se solicitado.
+- Clique em "Capturar Foto" para tirar uma foto.
+- Revise a foto e clique em "Salvar Foto".
+- A foto será salva no diretório `public/photos`, e o cartão do aluno será atualizado para mostrar a nova imagem.
 
-## Project Structure
+## Estrutura do Projeto
 
-- `app/page.tsx`: Main entry point.
-- `components/StudentList.tsx`: Manages the student list state, search, and CSV import.
-- `components/CameraCapture.tsx`: Handles the webcam interface and image capture.
-- `app/api/save-photo/route.ts`: API route responsible for saving the base64 image data to the file system.
-- `public/photos`: Directory where captured photos are stored.
+- `app/page.tsx`: Ponto de entrada principal.
+- `components/StudentList.tsx`: Gerencia o estado da lista de alunos, pesquisa e importação de CSV.
+- `components/CameraCapture.tsx`: Lida com a interface da webcam e captura de imagem.
+- `app/api/save-photo/route.ts`: Rota da API responsável por salvar os dados da imagem base64 no sistema de arquivos.
+- `public/photos`: Diretório onde as fotos capturadas são armazenadas.
 
-## Learn More
+## Saiba Mais
 
-To learn more about Next.js, take a look at the following resources:
+Para saber mais sobre Next.js, dê uma olhada nos seguintes recursos:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Documentação Next.js](https://nextjs.org/docs) - aprenda sobre as funcionalidades e API do Next.js.
+- [Aprenda Next.js](https://nextjs.org/learn) - um tutorial interativo de Next.js.
